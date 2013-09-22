@@ -46,6 +46,7 @@ class Browser extends EventEmitter
     @cookies = new Cookies()
     @_storages = new Storages()
     @_interact = Interact.use(this)
+    this.setMaxListeners(0)
     # The window that is currently in scope, some JS functions need this, e.g.
     # when closing a window, you need to determine whether caller (window in
     # scope) is same as window.opener
